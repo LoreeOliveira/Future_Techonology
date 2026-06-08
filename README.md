@@ -12,26 +12,29 @@
   Monte os componentes na protoboard seguindo o esquema de pinos abaixo:<img width="672" height="604" alt="Captura de tela 2026-06-08 114845" src="https://github.com/user-attachments/assets/f057583e-7eb5-4b3c-9694-90f727d39429" />  
 ####  Passo 2: Code
   ```cpp
-// Definição dos Pinos - Sensor HC-SR04 (sensor ultrassônico)
+// Definição dos Pinos - Sensor HC-SR04
 const int trigPin = 12;
 const int echoPin = 13;
 
-// Semáforo 1 (Leds de cima no circuito)
+// Semáforo 1 (Leds de baixo no circuito)
 const int ledR = 4;
 const int ledY = 3;
-const int ledB = 2;
+const int ledB = 2; // Usando o Azul como Verde
 
-// Semáforo 2 (Leds de baixo no circuito)
+// Semáforo 2 (Leds de cima no circuito)
 const int ledR1 = 7;
 const int ledY1 = 6;
-const int ledB1 = 5;
+const int ledB1 = 5; // Usando o Azul como Verde
+
+// Pino do Buzzer Piezo
+const int piezoPin = 10;
 
 // Tempos de transição (em milissegundos)
-const int tempoAzul = 9000;
-const int tempoAmarelo = 2000;
-const int tempoVermelho = 6000;
+const int tempoAzul = 3000;
+const int tempoAmarelo = 1000;
+const int tempoVermelho = 2000;
 
-const int distanciaEmergencia = 50; // em centímetros
+const int distanciaEmergencia = 20; // em centímetros
 
 void setup() {
   pinMode(trigPin, OUTPUT);
@@ -46,6 +49,9 @@ void setup() {
   pinMode(ledR1, OUTPUT);
   pinMode(ledY1, OUTPUT);
   pinMode(ledB1, OUTPUT);
+  
+  // Configuração do pino do Piezo
+  pinMode(piezoPin, OUTPUT);
   
   Serial.begin(9600);
 }
@@ -82,54 +88,58 @@ long lerDistancia() {
 
 // Função unificada para controlar todos os LEDs dos dois semáforos
 void controlarSemaforos(int r1, int y1, int b1, int r2, int y2, int b2) {
-  // Semáforo 1
   digitalWrite(ledR, r1);
   digitalWrite(ledY, y1);
   digitalWrite(ledB, b1);
   
-  // Semáforo 2
   digitalWrite(ledR1, r2);
-  digitalWrite(ledY1, y2);
+  digitalWrite(ledY1, y2); 
   digitalWrite(ledB1, b2);
 }
 
-// Espera inteligente que monitora o sensor de proximidade
+// Espera inteligente otimizada para resposta imediata
 void esperarComLeitura(int tempo) {
   int passados = 0;
+  // Diminuímos o delay interno para 10ms para atualizar a leitura do sensor muito mais rápido
   while (passados < tempo) {
     long cm = lerDistancia();
 
-    // Se detectar viatura próxima E o Semáforo 1 NÃO estiver vermelho
-    if (cm > 0 && cm < distanciaEmergencia && digitalRead(ledR) == LOW) {
+    // MODIFICAÇÃO: Se detectar proximidade, entra em emergência INSTANTANEAMENTE
+    if (cm > 0 && cm < distanciaEmergencia) {
       fecharSemaforoImediato();
-      return; // Sai da espera atual para reiniciar o loop com segurança
+      return; 
     }
 
-    delay(100); 
-    passados += 100;
+    delay(10); 
+    passados += 10;
   }
 }
 
-// Rotina de emergência total (Ambos Vermelhos)
+// Rotina de emergência IMEDIATA (Ambos Vermelhos + Alarme Sonoro na hora)
 void fecharSemaforoImediato() {
-  Serial.println("EMERGÊNCIA! Viatura detectada. Bloqueando cruzamento...");
+  Serial.println("EMERGÊNCIA DETECTADA! Bloqueio imediato do cruzamento.");
 
-  // Se o Semáforo 1 estiver aberto (Azul), passa pelo Amarelo rápido antes de fechar tudo
-  if (digitalRead(ledB) == HIGH) {
-    controlarSemaforos(LOW, HIGH, LOW, HIGH, LOW, LOW); // S1: Amarelo | S2: Vermelho
-    delay(1000); 
-  }
-
-  // Ativa o Vermelho nos DOIS semáforos simultaneamente
+  // Corta qualquer transição e joga os dois semáforos no VERMELHO no mesmo instante
   controlarSemaforos(HIGH, LOW, LOW, HIGH, LOW, LOW); 
   
-  delay(6000); // Mantém o cruzamento totalmente travado em vermelho por 6 segundos
+  // O alarme começa a tocar imediatamente junto com os LEDs vermelhos
+  for (int i = 0; i < 12; i++) {
+    tone(piezoPin, 1000); 
+    delay(250);
+    noTone(piezoPin);     
+    delay(250);
+  }
+  
   Serial.println("Cruzamento liberado. Reiniciando ciclo normal.");
+}
 ```
+Passo 3: ultilizar o Arduino IDE
+
   
  
+  ## $\color{blue}{fluxograma{}}$
   
-  
+ ## $\color{blue}{5W2H{}}$
 
   ## $\color{blue}{ABNT{}}$
 
@@ -138,6 +148,8 @@ void fecharSemaforoImediato() {
  <img width="702.5" height="314" alt="Captura de tela 2026-06-08 103036" src="https://github.com/user-attachments/assets/6613088f-f9cf-466c-b062-5315beb9ea14" />
 
  <img width="600" height="400" alt="Design sem nome" src="https://github.com/user-attachments/assets/c3bb5298-9bf9-4860-ae2a-9726fce3ba65" />
+
+ ## $\color{blue}{Cronograma{}}$
 
 
 
