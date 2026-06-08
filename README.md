@@ -9,7 +9,8 @@
   #### Pré-requisito:
   Arduino IDE instalada no seu computador.
   #### Passo 1: Montagem do Circuito (Hardware)  
-  Monte os componentes na protoboard seguindo o esquema de pinos abaixo:<img width="672" height="604" alt="Captura de tela 2026-06-08 114845" src="https://github.com/user-attachments/assets/f057583e-7eb5-4b3c-9694-90f727d39429" />  
+  Monte os componentes na protoboard seguindo o esquema de pinos abaixo:<img width="644" height="635" alt="Captura de tela 2026-06-08 154309" src="https://github.com/user-attachments/assets/a65b1391-c355-4688-9836-93916212709f" />
+
 ####  Passo 2: Code
   ```cpp
 // Definição dos Pinos - Sensor HC-SR04
@@ -34,7 +35,7 @@ const int tempoAzul = 3000;
 const int tempoAmarelo = 1000;
 const int tempoVermelho = 2000;
 
-const int distanciaEmergencia = 20; // em centímetros
+const int distanciaEmergencia = 10; // em centímetros
 
 void setup() {
   pinMode(trigPin, OUTPUT);
@@ -133,7 +134,10 @@ void fecharSemaforoImediato() {
   Serial.println("Cruzamento liberado. Reiniciando ciclo normal.");
 }
 ```
-Passo 3: ultilizar o Arduino IDE
+#### Passo 3: ultilizar o Arduino IDE  
+Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir programar o Arduino!  
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/7648ce74-2971-40c9-93b4-ac12e42f7945" />
+
 
   
  
@@ -155,7 +159,7 @@ Passo 3: ultilizar o Arduino IDE
 
 
   ## $\color{blue}{Pessoas{}}$ $\color{blue}{Desenvolvedoras{}}$ $\color{blue}{do{}}$ $\color{blue}{Projeto{}}$
-  * Eduardo Farias Moreira <a href="https://github.com/EduFM202">
+  * Eduardo Farias Moreira DEV <a href="https://github.com/EduFM202">
     <img alt="followers" title="Me siga no Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
      <a href=""> 
      <a href="https://www.linkedin.com/in/eduardo-farias-moreira-7b8432401/" target="_blank">
@@ -167,7 +171,7 @@ Passo 3: ultilizar o Arduino IDE
     </a>
 
     
-  * Julia Vitoria Silva Sanches <a href="https://github.com/JuVitori">
+  * Julia Vitoria Silva Sanches DEV <a href="https://github.com/JuVitori">
     <img alt="followers" title="Me siga no Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
      <a href=""> 
      <a href="https://www.linkedin.com/in/julia-vitoria-silva-sanches-218bba414/" target="_blank">
@@ -177,7 +181,7 @@ Passo 3: ultilizar o Arduino IDE
             src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
         />
     </a>
-  * Lorena Sousa de Oliveira <a href="https://github.com/LoreeOliveira">
+  * Lorena Sousa de Oliveira SM <a href="https://github.com/LoreeOliveira">
     <img alt="followers" title="Me siga no Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
      <a href=""> 
      <a href="https://www.linkedin.com/in/lorena-sousa-de-oliveira-404438401/" target="_blank">
@@ -187,7 +191,7 @@ Passo 3: ultilizar o Arduino IDE
             src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
         />
     </a>
-  * Marcelo Barbosa Souza <a href="https://github.com/Tchelo-Barbosa">
+  * Marcelo Barbosa Souza DEV <a href="https://github.com/Tchelo-Barbosa">
     <img alt="followers" title="Me siga no Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
      <a href=""> 
      <a href="https://www.linkedin.com/in/marcelo-barbosa-2b7433401/" target="_blank">
@@ -197,7 +201,7 @@ Passo 3: ultilizar o Arduino IDE
             src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
         />
     </a>
-  * Miguel Porto Coutinho <a href="https://github.com/CoutomgPortinho">
+  * Miguel Porto Coutinho PO <a href="https://github.com/CoutomgPortinho">
     <img alt="followers" title="Me siga no Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
      <a href=""> 
      <a href="https://www.linkedin.com/in/miguel-porto-coutinho-b2b428401/" target="_blank">
