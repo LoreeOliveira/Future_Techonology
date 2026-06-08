@@ -10,9 +10,122 @@
   Arduino IDE instalada no seu computador.
   #### Passo 1: Montagem do Circuito (Hardware)  
   Monte os componentes na protoboard seguindo o esquema de pinos abaixo:<img width="672" height="604" alt="Captura de tela 2026-06-08 114845" src="https://github.com/user-attachments/assets/f057583e-7eb5-4b3c-9694-90f727d39429" />  
-  [Uploading copy_of_sem_foro_inteligente_sprint_2_31.ino…]()
 ####  Passo 2: Code
+  ```cpp
+// Definição dos Pinos - Sensor HC-SR04 (sensor ultrassônico)
+const int trigPin = 12;
+const int echoPin = 13;
+
+// Semáforo 1 (Leds de cima no circuito)
+const int ledR = 4;
+const int ledY = 3;
+const int ledB = 2;
+
+// Semáforo 2 (Leds de baixo no circuito)
+const int ledR1 = 7;
+const int ledY1 = 6;
+const int ledB1 = 5;
+
+// Tempos de transição (em milissegundos)
+const int tempoAzul = 9000;
+const int tempoAmarelo = 2000;
+const int tempoVermelho = 6000;
+
+const int distanciaEmergencia = 50; // em centímetros
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
   
+  // Configuração do Semáforo 1
+  pinMode(ledR, OUTPUT);
+  pinMode(ledY, OUTPUT);
+  pinMode(ledB, OUTPUT);
+  
+  // Configuração do Semáforo 2
+  pinMode(ledR1, OUTPUT);
+  pinMode(ledY1, OUTPUT);
+  pinMode(ledB1, OUTPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop() {
+  // ESTADO 1: Semáforo 1 ABERTO (Azul) | Semáforo 2 FECHADO (Vermelho)
+  controlarSemaforos(LOW, LOW, HIGH, HIGH, LOW, LOW); 
+  esperarComLeitura(tempoAzul);
+
+  // ESTADO 2: Semáforo 1 ATENÇÃO (Amarelo) | Semáforo 2 FECHADO (Vermelho)
+  controlarSemaforos(LOW, HIGH, LOW, HIGH, LOW, LOW);
+  esperarComLeitura(tempoAmarelo);
+
+  // ESTADO 3: Semáforo 1 FECHADO (Vermelho) | Semáforo 2 ABERTO (Azul)
+  controlarSemaforos(HIGH, LOW, LOW, LOW, LOW, HIGH);
+  esperarComLeitura(tempoVermelho);
+  
+  // ESTADO 4: Semáforo 1 FECHADO (Vermelho) | Semáforo 2 ATENÇÃO (Amarelo)
+  controlarSemaforos(HIGH, LOW, LOW, LOW, HIGH, LOW);
+  esperarComLeitura(tempoAmarelo);
+}
+
+// Função para ler a distância do sensor ultrassônico
+long lerDistancia() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  long duracao = pulseIn(echoPin, HIGH);
+  return duracao / 29 / 2;
+}
+
+// Função unificada para controlar todos os LEDs dos dois semáforos
+void controlarSemaforos(int r1, int y1, int b1, int r2, int y2, int b2) {
+  // Semáforo 1
+  digitalWrite(ledR, r1);
+  digitalWrite(ledY, y1);
+  digitalWrite(ledB, b1);
+  
+  // Semáforo 2
+  digitalWrite(ledR1, r2);
+  digitalWrite(ledY1, y2);
+  digitalWrite(ledB1, b2);
+}
+
+// Espera inteligente que monitora o sensor de proximidade
+void esperarComLeitura(int tempo) {
+  int passados = 0;
+  while (passados < tempo) {
+    long cm = lerDistancia();
+
+    // Se detectar viatura próxima E o Semáforo 1 NÃO estiver vermelho
+    if (cm > 0 && cm < distanciaEmergencia && digitalRead(ledR) == LOW) {
+      fecharSemaforoImediato();
+      return; // Sai da espera atual para reiniciar o loop com segurança
+    }
+
+    delay(100); 
+    passados += 100;
+  }
+}
+
+// Rotina de emergência total (Ambos Vermelhos)
+void fecharSemaforoImediato() {
+  Serial.println("EMERGÊNCIA! Viatura detectada. Bloqueando cruzamento...");
+
+  // Se o Semáforo 1 estiver aberto (Azul), passa pelo Amarelo rápido antes de fechar tudo
+  if (digitalRead(ledB) == HIGH) {
+    controlarSemaforos(LOW, HIGH, LOW, HIGH, LOW, LOW); // S1: Amarelo | S2: Vermelho
+    delay(1000); 
+  }
+
+  // Ativa o Vermelho nos DOIS semáforos simultaneamente
+  controlarSemaforos(HIGH, LOW, LOW, HIGH, LOW, LOW); 
+  
+  delay(6000); // Mantém o cruzamento totalmente travado em vermelho por 6 segundos
+  Serial.println("Cruzamento liberado. Reiniciando ciclo normal.");
+```
   
  
   
@@ -23,6 +136,9 @@
   ## $\color{blue}{Acesso{}}$ $\color{blue}{ao{}}$ $\color{blue}{Projeto{}}$
  #### tinkercad: https://www.tinkercad.com/things/lVMtRSs3LjH-semaforo-inteligente-sprint-23?sharecode=6ZbcorSg7qSgv5DHwR53V9htrnXI9KsmOL2csctxCMo
  <img width="702.5" height="314" alt="Captura de tela 2026-06-08 103036" src="https://github.com/user-attachments/assets/6613088f-f9cf-466c-b062-5315beb9ea14" />
+
+ <img width="600" height="400" alt="Design sem nome" src="https://github.com/user-attachments/assets/c3bb5298-9bf9-4860-ae2a-9726fce3ba65" />
+
 
 
 
@@ -37,6 +153,7 @@
             src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
         />
     </a>
+
     
   * Julia Vitoria Silva Sanches <a href="https://github.com/JuVitori">
     <img alt="followers" title="Me siga no Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
