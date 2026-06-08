@@ -1,16 +1,29 @@
-  # $\color{blue}{Semáforo{}}$  $\color{blue}{inteligente{}}$
-  Este projeto consiste em um semáforo inteligente com dupla finalidade: auxiliar a polícia do Rio de Janeiro durante perseguições policiais, podendo fechar o semáforo quando detecta a viatura, e promover a acessibilidade urbana ao substituir a cor verde pela cor azul, facilitando a identificação do sinal por motoristas daltônicos.
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=4000&pause=1000&color=308ECDFF&width=435&lines=Semáforo+inteligente;Projeto+sprint)](https://git.io/typing-svg)       
+ Este projeto consiste em um semáforo inteligente com dupla finalidade: auxiliar a polícia do Rio de Janeiro durante perseguições policiais, podendo fechar o semáforo quando detecta a viatura, e promover a acessibilidade urbana ao substituir a cor verde pela cor azul, facilitando a identificação do sinal por motoristas daltônicos.
   ## $\color{blue}{Tecnologias{}}$ $\color{blue}{Utilizadas{}}$
   * tinkercad/ C++
   * Arduino IDE
   * github
   * flowgorithm
-  ## $\color{blue}{Instruções{}}$ 
+  ## $\color{blue}{Instruções{}}$
+  #### Pré-requisito:
+  Arduino IDE instalada no seu computador.
+  #### Passo 1: Montagem do Circuito (Hardware)  
+  Monte os componentes na protoboard seguindo o esquema de pinos abaixo:<img width="672" height="604" alt="Captura de tela 2026-06-08 114845" src="https://github.com/user-attachments/assets/f057583e-7eb5-4b3c-9694-90f727d39429" />  
+  [Uploading copy_of_sem_foro_inteligente_sprint_2_31.ino…]()
+####  Passo 2: Code
+  
+  
+ 
+  
+  
 
   ## $\color{blue}{ABNT{}}$
 
   ## $\color{blue}{Acesso{}}$ $\color{blue}{ao{}}$ $\color{blue}{Projeto{}}$
  #### tinkercad: https://www.tinkercad.com/things/lVMtRSs3LjH-semaforo-inteligente-sprint-23?sharecode=6ZbcorSg7qSgv5DHwR53V9htrnXI9KsmOL2csctxCMo
+ <img width="702.5" height="314" alt="Captura de tela 2026-06-08 103036" src="https://github.com/user-attachments/assets/6613088f-f9cf-466c-b062-5315beb9ea14" />
+
 
 
   ## $\color{blue}{Pessoas{}}$ $\color{blue}{Desenvolvedoras{}}$ $\color{blue}{do{}}$ $\color{blue}{Projeto{}}$
