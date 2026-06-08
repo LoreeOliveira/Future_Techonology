@@ -10,6 +10,7 @@
   ## $\color{blue}{ABNT{}}$
 
   ## $\color{blue}{Acesso{}}$ $\color{blue}{ao{}}$ $\color{blue}{Projeto{}}$
+ #### tinkercad: https://www.tinkercad.com/things/lVMtRSs3LjH-semaforo-inteligente-sprint-23?sharecode=6ZbcorSg7qSgv5DHwR53V9htrnXI9KsmOL2csctxCMo
 
 
   ## $\color{blue}{Pessoas{}}$ $\color{blue}{Desenvolvedoras{}}$ $\color{blue}{do{}}$ $\color{blue}{Projeto{}}$
