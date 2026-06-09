@@ -4,6 +4,7 @@
   * tinkercad/ C++
   * Arduino IDE
   * github
+  * excel
   * flowgorithm
   ## $\color{blue}{Instruções{}}$
   #### Pré-requisito:
