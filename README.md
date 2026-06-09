@@ -151,7 +151,8 @@ Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir p
  #### tinkercad: https://www.tinkercad.com/things/lVMtRSs3LjH-semaforo-inteligente-sprint-23?sharecode=6ZbcorSg7qSgv5DHwR53V9htrnXI9KsmOL2csctxCMo
  <img width="702.5" height="314" alt="Captura de tela 2026-06-08 103036" src="https://github.com/user-attachments/assets/6613088f-f9cf-466c-b062-5315beb9ea14" />
 
- <img width="600" height="400" alt="Design sem nome" src="https://github.com/user-attachments/assets/c3bb5298-9bf9-4860-ae2a-9726fce3ba65" />
+
+<img width="702.5" height="330" alt="Design sem nome (3)" src="https://github.com/user-attachments/assets/7a2cd399-6306-49dd-973e-a9dd7f5fea49" />
 
  ## $\color{blue}{Cronograma{}}$
 
