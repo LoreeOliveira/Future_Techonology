@@ -1,11 +1,11 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=4000&pause=1000&color=308ECDFF&width=435&lines=Semáforo+inteligente;Projeto+sprint)](https://git.io/typing-svg)       
  Este projeto consiste em um semáforo inteligente com dupla finalidade: auxiliar a polícia do Rio de Janeiro durante perseguições policiais, podendo fechar o semáforo quando detecta a viatura, e promover a acessibilidade urbana ao substituir a cor verde pela cor azul, facilitando a identificação do sinal por motoristas daltônicos.
   ## $\color{blue}{Tecnologias{}}$ $\color{blue}{Utilizadas{}}$
-  * tinkercad/ C++
+  * Tinkercad/ C++
   * Arduino IDE
-  * github
-  * excel
-  * flowgorithm
+  * Github
+  * Excel
+  * Flowgorithm
   ## $\color{blue}{Instruções{}}$
   #### Pré-requisito:
   Arduino IDE instalada no seu computador.
@@ -135,7 +135,7 @@ void fecharSemaforoImediato() {
   Serial.println("Cruzamento liberado. Reiniciando ciclo normal.");
 }
 ```
-#### Passo 3: ultilizar o Arduino IDE  
+#### Passo 3: Ultilizar o Arduino IDE  
 Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir programar o Arduino!
 
 * Conecte o Arduino ao seu PC via USB.  
@@ -152,7 +152,7 @@ Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir p
 
   
  
-  ## $\color{blue}{fluxograma{}}$
+  ## $\color{blue}{Fluxograma{}}$
   
  ## $\color{blue}{5W2H{}}$
 
