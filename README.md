@@ -135,8 +135,18 @@ void fecharSemaforoImediato() {
 }
 ```
 #### Passo 3: ultilizar o Arduino IDE  
-Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir programar o Arduino!  
+Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir programar o Arduino!
+
+* Conecte o Arduino ao seu PC via USB.  
+
+* Vá em Ferramentas > Placa e selecione o Arduino Uno
+
+* Vá em Ferramentas > Porta e selecione a porta COM ativa.
+
+* Clique no botão de carregar
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/7648ce74-2971-40c9-93b4-ac12e42f7945" />
+
+#### Passo 4: Testar se está funcionando
 
 
   
