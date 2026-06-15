@@ -153,6 +153,8 @@ Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir p
   
  
   ## $\color{blue}{Fluxograma{}}$
+  Flowgorithm:
+
   
  ## $\color{blue}{5W2H{}}$
 
