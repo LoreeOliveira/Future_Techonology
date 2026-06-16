@@ -157,6 +157,10 @@ Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir p
 
   
  ## $\color{blue}{5W2H{}}$
+ [5w2h_Sprint2.xlsx](https://github.com/user-attachments/files/28982329/5w2h_Sprint2.xlsx)  
+ 
+<img width="1166" height="457" alt="image" src="https://github.com/user-attachments/assets/621c2db7-a6b7-475c-aa1b-e965e5d40e25" />
+
 
   ## $\color{blue}{ABNT{}}$
 
@@ -169,6 +173,9 @@ Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir p
 <img width="702.5" height="330" alt="Design sem nome (3)" src="https://github.com/user-attachments/assets/7a2cd399-6306-49dd-973e-a9dd7f5fea49" />
 
  ## $\color{blue}{Cronograma{}}$
+<img width="910" height="624" alt="image" src="https://github.com/user-attachments/assets/1f72d4c2-8175-438a-b095-86f971ad7504" />  
+<img width="911" height="212" alt="image" src="https://github.com/user-attachments/assets/7a056ab1-be8f-496e-b505-a48c38372da2" />
+
 
 
 
