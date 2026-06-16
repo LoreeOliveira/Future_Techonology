@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Dev_1o_Ano"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-16 08:04:35 "/>
+        <attribute name="created" value="RGV2XzFvX0FubztETlMxMTgxMjYwODE0OzIwMjYtMDYtMDg7IjAzOjQ2OjAwICI7Mjg1Ng=="/>
+        <attribute name="edited" value="RGV2XzFvX0FubztETlMxMTgxMjYwODE0OzIwMjYtMDYtMDg7IjA0OjA2OjUwICI7MTsyOTY2"/>
+        <attribute name="edited" value="RGV2XzFvX0FubztETlMxMTgxMjYwODUxOzIwMjYtMDYtMTY7IjA4OjA0OjM1ICI7MzsyOTcz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ledR, ledY, ledB, ledR2, ledY2, ledB2" type="Integer" array="False" size=""/>
+            <declare name="Sensor, buzzer" type="Integer" array="False" size=""/>
+            <if expression="ledR = 1">
+                <then>
+                    <output expression="ledR2 = 0" newline="True"/>
+                    <output expression="ledY + ledY2 = 0" newline="True"/>
+                    <output expression="ledB = 0" newline="True"/>
+                    <output expression="ledB2 = 1" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="ledR2 = 1">
+                <then>
+                    <output expression="ledR = 0" newline="True"/>
+                    <output expression="ledY + ledY2 = 0" newline="True"/>
+                    <output expression="ledB = 1" newline="True"/>
+                    <output expression="ledB2 = 0" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <while expression="sensor">
+                <output expression="ledR + ledR2 = 1" newline="True"/>
+                <output expression="ledY + ledY2 = 0" newline="True"/>
+                <output expression="ledB + ledB2 = 0" newline="True"/>
+                <output expression="buzzer" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
