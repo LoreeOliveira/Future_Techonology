@@ -147,11 +147,10 @@ Transferir todo o código feito no tinkercad para o Arduino IDE para conseguir p
 * Clique no botão de carregar
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/7648ce74-2971-40c9-93b4-ac12e42f7945" />
 
-#### Passo 4: Testar se está funcionando
+#### Passo 4: Pronto!
+<img width="1280" height="960" alt="WhatsApp Image 2026-06-17 at 20 38 21" src="https://github.com/user-attachments/assets/7a79a0d1-1d96-41c5-81c5-a92ce96455f9" />  
 
 
-  
- 
   ## $\color{blue}{Fluxograma{}}$ 
   [Fluxograma.pdf.pdf](https://github.com/user-attachments/files/28998611/Fluxograma.pdf.pdf)
 
